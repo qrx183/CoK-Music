@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.music.mapper.LoveMusicMapper"> <!--路径要和本地文件所处路径一致-->
+
+    <select id="selectLoveMusic" resultType="com.example.music.model.Music">
+        select * from lovemusic where userid=#{userid} and musicid=#{musicid};
+    </select>
+
+    <insert id="insertLoveMusic">
+        insert into lovemusic(userid,musicid) values(#{userid},#{musicid});
+    </insert>
+
+    <delete id="deleteLoveMusic">
+        delete from lovemusic where userid=#{userid} and musicid=#{musicid};
+    </delete>
+
+    <select id="selectLoveMusicByUserId" resultType="com.example.music.model.Music">
+        select m.* from lovemusic lm,music m where lm.musicid=m.id and lm.userid=#{userid};
+    </select>
+
+    <select id="selctLoveMusicListByNameAndUserId" resultType="com.example.music.model.Music">
+        select m.* from lovemusic lm,music m where lm.musicid=m.id and lm.userid=#{userid} and
+                                                   m.title like concat('%',#{title},'%');
+    </select>
+
+    <delete id="deleteLoveMusicByMusicId">
+        delete from lovemusic where musicid=#{musicid};
+    </delete>
+</mapper>

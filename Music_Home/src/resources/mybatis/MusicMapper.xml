@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.music.mapper.MusicMapper"> <!--路径要和本地文件所处路径一致-->
+
+    <insert id="insert">
+        insert into music(title,singer,time,url,userid) values(#{title},#{singer},#{time},#{url},#{userid});
+    </insert>
+
+    <select id="selectBySAndN" resultType="com.example.music.model.Music">
+        select * from music where singer = #{singer} and title = #{title}
+    </select>
+    <select id="selectById" resultType="com.example.music.model.Music">
+        select * from music where id = #{id};
+    </select>
+    
+    <select id="selectMusic" resultType="com.example.music.model.Music">
+        select * from music;
+    </select>
+
+    <select id="selectMusicByName" resultType="com.example.music.model.Music">
+        select * from music where title like concat('%',#{title},'%');
+    </select>
+    <delete id="deleteMusic">
+        delete from music where id = #{id};
+    </delete>
+</mapper>

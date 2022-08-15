@@ -1,0 +1,56 @@
+.zujian{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+#myImage{
+    width: 300px;
+    height: 225px;
+}
+.myInfo{
+    display: flex;
+    justify-content:space-around;
+}
+.love{
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(89, 27, 32,0.5);
+    color: white;   
+}
+.delete{
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(89, 27, 32,0.5);
+    color: white;
+}
+.myCheckbox{
+    float:right;
+}
+.sub{
+    color: white;
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 25%;
+    font-size: medium;
+    text-align: center;
+    padding: 0px 0px;
+    background-color: rgb(36, 33, 33);
+}
+.del{
+    color: white;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 25%;
+    font-size: medium;
+    text-align: center;
+    padding: 0px 0px;
+    background-color: rgb(36, 33, 33);
+    float:right;
+}
+
+#bot{
+    position:absolute;
+    bottom: 0;
+}
